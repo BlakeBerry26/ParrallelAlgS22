@@ -77,7 +77,7 @@ void Server(int argc, char *argv[], int numProcessors) {
       MPI_Irecv(recv_bufs[i+j-1], sizeof(move)*IDIM*JDIM, MPI_BYTE, MPI_ANY_SOURCE, i+j, MPI_COMM_WORLD, &recv_requests[i+j-1]);
     }
   }
-
+  
   for(int i=0;i<NUM_GAMES;++i) { // recv all solutions
     MPI_Status status;
     int num;
